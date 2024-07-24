@@ -1,13 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    // Start the animation after a short delay
+    const timer = setTimeout(() => setIsAnimated(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       {/* Header */}
       <header className="flex justify-between items-center p-4">
         <div className="flex items-center">
-          <Heart className="h-6 w-6 text-white mr-2" />
+          <Heart className={`h-6 w-6 text-white mr-2 ${isAnimated ? 'animate-rainbow-pulse' : ''}`} />
           <span className="font-bold">lovable</span>
         </div>
         <nav>
@@ -22,7 +31,7 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center text-center px-4">
-        <Heart className="h-32 w-32 text-yellow-500 mb-8" />
+        <Heart className={`h-32 w-32 text-yellow-500 mb-8 ${isAnimated ? 'animate-rainbow-pulse' : ''}`} />
         <h1 className="text-5xl font-bold mb-4">The last piece of software.</h1>
         <p className="text-xl mb-8 max-w-2xl">
           We're building software that builds software. Our <a href="#" className="underline">vision</a> is to unlock
@@ -52,7 +61,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="flex justify-between items-center p-4 border-t border-gray-800">
         <div className="flex items-center">
-          <Heart className="h-6 w-6 text-white mr-2" />
+          <Heart className={`h-6 w-6 text-white mr-2 ${isAnimated ? 'animate-rainbow-pulse' : ''}`} />
           <span className="font-bold">lovable</span>
         </div>
         <nav>

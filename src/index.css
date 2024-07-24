@@ -44,3 +44,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes rainbow-pulse {
+  0%, 100% { color: #ff0000; } /* Red */
+  16.67% { color: #ff7f00; } /* Orange */
+  33.33% { color: #ffff00; } /* Yellow */
+  50% { color: #00ff00; } /* Green */
+  66.67% { color: #0000ff; } /* Blue */
+  83.33% { color: #8b00ff; } /* Violet */
+}
+
+.animate-rainbow-pulse {
+  animation: rainbow-pulse 5s linear infinite;
+}
