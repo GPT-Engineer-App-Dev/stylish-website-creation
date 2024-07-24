@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -21,8 +22,8 @@ const Index = () => {
         </div>
         <nav>
           <ul className="flex space-x-4">
-            <li><a href="#" className="hover:text-gray-300">GPT Engineer</a></li>
-            <li><a href="#" className="hover:text-gray-300">Vision</a></li>
+            <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
+            <li><Link to="/vision" className="hover:text-gray-300">Vision</Link></li>
             <li><a href="#" className="hover:text-gray-300">News</a></li>
             <li><a href="#" className="hover:text-gray-300">Careers</a></li>
           </ul>
@@ -34,7 +35,7 @@ const Index = () => {
         <Heart className={`h-32 w-32 text-yellow-500 mb-8 ${isAnimated ? 'animate-rainbow-pulse' : ''}`} />
         <h1 className="text-5xl font-bold mb-4">The last piece of software.</h1>
         <p className="text-xl mb-8 max-w-2xl">
-          We're building software that builds software. Our <a href="#" className="underline">vision</a> is to unlock
+          We're building software that builds software. Our <Link to="/vision" className="underline">vision</Link> is to unlock
           human creativity — by enabling anyone to create software.
         </p>
         <div className="mb-12">
@@ -69,7 +70,7 @@ const Index = () => {
             <li><a href="#" className="hover:text-gray-300">GPT Engineer</a></li>
             <li><a href="#" className="hover:text-gray-300">Company</a></li>
             <li><a href="#" className="hover:text-gray-300">Overview</a></li>
-            <li><a href="#" className="hover:text-gray-300">Vision</a></li>
+            <li><Link to="/vision" className="hover:text-gray-300">Vision</Link></li>
           </ul>
         </nav>
       </footer>
