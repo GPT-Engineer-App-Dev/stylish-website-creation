@@ -1,6 +1,7 @@
 import { Home, Eye, Newspaper, Briefcase } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import Vision from "./pages/Vision.jsx";
+import News from "./pages/News.jsx";
 import Careers from "./pages/Careers.jsx";
 
 /**
@@ -23,7 +24,7 @@ export const navItems = [
     title: "News",
     to: "/news",
     icon: <Newspaper className="h-4 w-4" />,
-    page: <div>News Page</div>, // Placeholder for News page
+    page: <News />,
   },
   {
     title: "Careers",
